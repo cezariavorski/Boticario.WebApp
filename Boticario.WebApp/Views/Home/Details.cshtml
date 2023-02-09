@@ -1,0 +1,494 @@
+﻿@model Boticario.WebApp.Models.RepositoryJson
+@{
+    ViewData["Title"] = "Details Repos - Boticario Desafio";
+}
+
+<h1>Boticario Desafio</h1>
+
+<h4>Repository: <span class="fw-bold shadow-sm m-sm-1">"@Model.name"</span> from User: <span class="fw-bold shadow-sm m-sm-1">"@Model.owner.login"</span></h4>
+
+<hr />
+
+<div>
+    <div class="row">
+        <div class="col-4">
+            <h4>Detalhes</h4>
+        </div>
+        <div class="col-8 text-end">
+            <a asp-action="Index">Voltar para Lista</a>
+        </div>
+    </div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.full_name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.full_name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model._private)
+        </dt>
+        <dd class="col-sm-10">
+            @Model._private.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.html_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.html_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fork)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.fork.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.forks_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.forks_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.keys_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.keys_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.collaborators_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.collaborators_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.teams_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.teams_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.hooks_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.hooks_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.issue_events_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.issue_events_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.events_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.events_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.assignees_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.assignees_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.branches_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.branches_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.tags_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tags_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.blobs_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.blobs_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.git_tags_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.git_tags_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.git_refs_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.git_refs_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.trees_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.trees_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.statuses_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.statuses_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.languages_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.languages_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.stargazers_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.stargazers_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.contributors_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.contributors_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.subscribers_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.subscribers_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.subscription_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.subscription_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.commits_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.commits_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.git_commits_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.git_commits_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.comments_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.comments_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.issue_comment_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.issue_comment_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.contents_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.contents_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.compare_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.compare_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.merges_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.merges_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.archive_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.archive_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.downloads_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.downloads_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.issues_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.issues_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.pulls_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.pulls_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.milestones_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.milestones_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.notifications_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.notifications_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.labels_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.labels_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.releases_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.releases_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.deployments_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.deployments_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.created_at)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.created_at)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.updated_at)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.updated_at)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.pushed_at)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.pushed_at)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.git_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.git_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ssh_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ssh_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.clone_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.clone_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.svn_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.svn_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.homepage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.homepage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.size)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.size)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.stargazers_count)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.stargazers_count)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.watchers_count)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.watchers_count)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.language)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.language)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.has_issues)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.has_issues.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.has_projects)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.has_projects.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.has_downloads)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.has_downloads.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.has_wiki)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.has_wiki.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.has_pages)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.has_pages.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.forks_count)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.forks_count)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.mirror_url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.mirror_url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.archived)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.archived.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.disabled)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.disabled.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.open_issues_count)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.open_issues_count)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.license)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.license)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.allow_forking)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.allow_forking.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.is_template)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.is_template.ToString()
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.topics)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.topics)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.visibility)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.visibility)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.forks)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.forks)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.open_issues)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.open_issues)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.watchers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.watchers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.default_branch)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.default_branch)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.temp_clone_token)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.temp_clone_token)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.organization.login)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.organization.login)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.network_count)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.network_count)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.subscribers_count)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.subscribers_count)
+        </dd>
+    </dl>
+
+</div>
+
+<hr />
+
+<div>
+    <a asp-action="Index">Voltar para Lista</a>
+</div>
+

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Boticario.WebApp.Models.Repos>
+@{
+    ViewData["Title"] = "Boticario Desafio";
+
+    long totalCount = (long)ViewBag.TotalCount;
+}
+
+<h1>Boticario Desafio</h1>
+
+<h3>Get Repositories from GitHub</h3>
+
+<h6>Search repositories by language and featured; C#, Python, Ruby, F# or Visual Basic</h6>
+
+<hr />
+
+<div class="row">
+    <div class="col-2">
+        <a class="btn btn-outline-primary btn-sm" asp-action="Index" asp-route-id="1">Get All Repos</a>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-route-id="9">Del All Repos</a>
+    </div>
+    <div class="col-8">
+    </div>
+</div>
+
+<hr />
+
+<div>
+    <span>Total: <b>@totalCount.ToString("N0")</b> registros recuperados.</span>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReposID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameRepos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var repo in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => repo.ReposID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => repo.NameRepos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => repo.NameUser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => repo.Topics)
+                </td>
+                <td class="text-nowrap">
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Details" asp-route-id="@repo.ReposID" title="Detalhes do Repositório.">Detalhes Repos </a> &nbsp;
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+</table>
